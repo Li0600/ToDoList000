@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".editActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/amend_title"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:background="@color/blue"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/amending"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/amend"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/amend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reserve"
+        android:onClick="amend"/>
+
+</LinearLayout>
