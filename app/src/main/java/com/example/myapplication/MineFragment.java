@@ -64,8 +64,11 @@ public class MineFragment extends Fragment implements View.OnClickListener{
         if (v.getId() == R.id.delete) {
             if (nowuser != null && getActivity() != null) {
                 DBManager_user dbManager=new DBManager_user(getActivity());
+                DBManager dbManager1=new DBManager(getActivity());
                 // 删除用户
                 dbManager.delete(nowuser.getPhone());
+                //删除数据
+                dbManager1.deleteAll();
                 Toast.makeText(getActivity(), "账号已删除", Toast.LENGTH_SHORT).show();
                 // 跳转到登录页面
                 Intent intent=new Intent(getActivity(), enterActivity.class);

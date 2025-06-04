@@ -40,7 +40,7 @@ public class ResetUsernameActivity2 extends AppCompatActivity {
         Intent relsutintent = getIntent();
         Bundle bundle=new Bundle();
         bundle.putString("phone",user.getPhone());
-        bundle.putString("new_uername",user.getUsername());
+        bundle.putString("new_username",user.getUsername());
         bundle.putString("password",user.getPassword());
         relsutintent.putExtras(bundle);
         setResult(4, relsutintent);
