@@ -6,10 +6,7 @@
     <string name="con">专注</string>
     <string name="me">我的</string>
     <string name="bt">+</string>
-<<<<<<< HEAD
     <string name="delete1">删除</string>
-=======
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
 
     <string name="add_title">添加事项</string>
     <string name="edit">输入</string>
@@ -26,31 +23,22 @@
     <string name="sign">注册</string>
 
 
-<<<<<<< HEAD
     <string name="alarm_title">计时器</string>
     <string name="alarm">输入计时时间（分钟）</string>
     <string name="begin">开始计时</string>
     <string name="end">停止计时</string>
-=======
-    <string name="alarm_title">闹钟</string>
-    <string name="set_alarm">设置闹钟</string>
-    <string name="cancel_alarm">取消闹钟</string>
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
 
     <string name="setting">设置</string>
     <string name="delete">注销账号</string>
     <string name="phone1">电话号码：</string>
     <string name="user1">用户名：</string>
     <string name="password1">密码：</string>
-<<<<<<< HEAD
     <string name="message">个人信息</string>
     <string name="reset_password">修改密码</string>
     <string name="reset_username">修改用户名</string>
     <string name="new_password">修改后的密码：</string>
     <string name="new_username">修改后的用户名：</string>
     <string name="sure">确认</string>
-=======
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
     <string name="label"> </string>
 
     <!-- TODO: Remove or change this placeholder text -->

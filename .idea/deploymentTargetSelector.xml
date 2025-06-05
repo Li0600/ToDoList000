@@ -5,35 +5,21 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-<<<<<<< HEAD
       <SelectionState runConfigName="enterActivity (2)">
-=======
-      <SelectionState runConfigName="enterActivity (4)">
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="enterActivity (5)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-<<<<<<< HEAD
       <SelectionState runConfigName="enterActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="enterActivity (1)">
-=======
-      <SelectionState runConfigName="enterActivity (2)">
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="enterActivity (3)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-<<<<<<< HEAD
-=======
-      <SelectionState runConfigName="enterActivity">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
     </selectionStates>
   </component>
 </project>

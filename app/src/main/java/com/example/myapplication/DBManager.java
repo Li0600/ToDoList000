@@ -27,25 +27,6 @@ public class DBManager {
         db.close();
     }
 
-<<<<<<< HEAD
-=======
-//    // 批量添加数据（事务优化版）
-//    public void addAll(List<Todo> list) {
-//        SQLiteDatabase db = dbHelper.getWritableDatabase();
-//        db.beginTransaction();  // 开启事务（提升批量插入性能）
-//        try {
-//            for (Todo t : list) {
-//                ContentValues values = new ContentValues();
-//                values.put("detail", t.getDetail());
-//                db.insert(tbname, null, values);  // 循环插入
-//            }
-//            db.setTransactionSuccessful();  // 标记事务成功
-//        } finally {
-//            db.endTransaction();  // 结束事务（无论成功与否）
-//            db.close();
-//        }
-//    }
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
     // 删除表中所有数据
     public void deleteAll() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -91,24 +72,6 @@ public class DBManager {
         db.close();
         return list;
     }
-<<<<<<< HEAD
-=======
-//    // 根据ID查询单条数据
-//    public Todo findById(int id) {
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//        Cursor cursor = db.query(tbname, null, "ID=?", new String[]{String.valueOf(id)}, null, null, null
-//        );
-//        Todo t = null;
-//        if (cursor != null && cursor.moveToFirst()) {  // 至少有一条结果
-//            t = new Todo();
-//            t.setId(cursor.getInt(0));          // 第一列（ID）
-//            t.setDetail(cursor.getString(1));   // 第二列（CURNAME）
-//            cursor.close();
-//        }
-//        db.close();
-//        return t;
-//    }
->>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
 
 
 
