@@ -14,17 +14,23 @@
         android:gravity="center"
         android:background="@color/blue"
         android:layout_marginBottom="100dp" />
+<<<<<<< HEAD
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/message"
         android:textSize="20sp"/>
+=======
+
+
+>>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
     <ListView
         android:id="@+id/listview1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
     <Button
+<<<<<<< HEAD
         android:id="@+id/change_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,6 +43,10 @@
     <Button
         android:id="@+id/delete"
         android:layout_width="match_parent"
+=======
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+>>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/delete" />

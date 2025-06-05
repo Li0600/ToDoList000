@@ -22,9 +22,13 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_weight="1"
         android:clickable="true"
         android:focusable="true"/>
+=======
+        android:layout_weight="1"/>
+>>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
 
     <Button
         android:id="@+id/add"
