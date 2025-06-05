@@ -26,7 +26,6 @@ import java.util.List;
 public class HomeFragment extends Fragment implements AdapterView.OnItemLongClickListener,TodoAdapter.OnDeleteClickListener{
     ListView listView;
     Handler handler;
-//    ArrayAdapter<String> adapter;
     TodoAdapter adapter;
     private String detailStr;
     private static final String TAG=" HomeFragment ";
@@ -35,19 +34,18 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemLongClic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //加载视图
+
         View view=inflater.inflate(R.layout.fragment_home, container, false);
         listView= view.findViewById(R.id.listView);
 
-        // 绑定 Button 的点击事件
+
         Button addButton = view.findViewById(R.id.add);
         addButton.setOnClickListener(v -> {
             Intent add = new Intent(getActivity(), addActivity.class);
             startActivityForResult(add, 3);
         });
-        // 使用自定义适配器
         adapter = new TodoAdapter(getActivity(), R.layout.list_item, list1);
-        adapter.setOnDeleteClickListener(this);  // 设置删除按钮监听
+        adapter.setOnDeleteClickListener(this);
         listView.setAdapter(adapter);
 
 
@@ -64,7 +62,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemLongClic
 
             }
         };
-        // 加载数据
         loadDataFromDatabase();
         listView.setOnItemLongClickListener(this);
         return view;
@@ -87,10 +84,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemLongClic
 
 
 
-    public void onClick(View view){
-        Intent add=new Intent(getActivity(),addActivity.class);
-        startActivityForResult(add,3);
-    }
+
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 3 && resultCode == 5) {
@@ -105,7 +99,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemLongClic
 
     @Override
     public void onDeleteClick(int position) {
-        // 处理删除逻辑
         String item = list1.get(position);
         Thread t = new Thread(() -> {
             DBManager dbManager = new DBManager(getActivity());
@@ -122,7 +115,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemLongClic
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
         String item=list1.get(position);
         Log.d(TAG, "ListView item clicked");
-//        int todoid=position+1;
         DBManager dbManager = new DBManager(getActivity());
         List<Todo> todos=dbManager.listAll();
         int todoid = todos.get(position).getId();

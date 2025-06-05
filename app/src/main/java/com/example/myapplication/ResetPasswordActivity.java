@@ -35,7 +35,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         String phone=intent.getStringExtra("phone");
         String username=intent.getStringExtra("username");
         String new_password=editText.getText().toString();
-        // 密码长度验证
+
         if (new_password.length() < 6) {
             Toast.makeText(this, "密码长度至少为6位", Toast.LENGTH_SHORT).show();
             return;

@@ -36,7 +36,6 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
         return view;
     }
 
-
     @Override
     public void onClick(View v) {
         int id=v.getId();
@@ -46,11 +45,11 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
                 Toast.makeText(getActivity(),"请输入计时的时长",Toast.LENGTH_SHORT).show();
                 return;
             }
-            int time=Integer.parseInt(timeStr);
-            timer=new CountDownTimer(time*60000,60000) {
+            int time=Integer.parseInt(timeStr.trim());
+            timer=new CountDownTimer(time*1000,1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    editText.setText("还剩"+millisUntilFinished/60000+"分钟");
+                    editText.setText("还剩"+millisUntilFinished/1000+"秒");
                 }
 
                 @Override
@@ -58,6 +57,7 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
                     editText.setText(" ");
                     Toast.makeText(getActivity(),"计时已经结束",Toast.LENGTH_SHORT).show();
                     playAlarmSound();
+                    timer.cancel();
 
                 }
             };
@@ -79,12 +79,17 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
         }
     }
     private void playAlarmSound(){
+
         if(mediaPlayer==null){
             mediaPlayer=MediaPlayer.create(getActivity(),R.raw.alarm_sound);
             Log.i(TAG,"AlarmFragment:获取音频文件");
             mediaPlayer.setLooping(true);//设置循环播放
-            mediaPlayer.start();
-            timer1=new CountDownTimer(30000,1000) {
+            mediaPlayer.start();}
+
+            if (timer1 != null) {
+                timer1.cancel();
+            }
+            timer1=new CountDownTimer(5000,1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     Toast.makeText(getActivity(),"铃声还要响："+millisUntilFinished/1000+"秒",Toast.LENGTH_SHORT).show();
@@ -93,14 +98,14 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
                 @Override
                 public void onFinish() {
                     if (mediaPlayer != null) {
-                        mediaPlayer.stop();  // 停止播放
-                        mediaPlayer.release();  // 释放资源
+                        mediaPlayer.stop();
+                        mediaPlayer.release();
                         mediaPlayer = null;
                     }
                     Toast.makeText(getActivity(),"闹铃已经停止",Toast.LENGTH_SHORT).show();
                 }
             };
-        }
+
         timer1.start();
     }
 }

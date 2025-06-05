@@ -23,12 +23,12 @@ public class DBManager_user {
             Log.i(TAG, "User already exists with phone: " + u.getPhone());
             return false;
         }
-        SQLiteDatabase db = dbHelper.getWritableDatabase();  // 获取可写数据库
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("phone",u.getPhone());// 存储插入值
+        values.put("phone",u.getPhone());
         values.put("username", u.getUsername());
-        values.put("password",u.getPassword());// 键为列名，值为数据
-        db.insert(tbname, null, values);  // 插入数据（表名、null列名、值）
+        values.put("password",u.getPassword());
+        db.insert(tbname, null, values);
         db.close();
         return true;
     }
@@ -46,7 +46,6 @@ public class DBManager_user {
         values.put("username", u.getUsername());
         values.put("password",u.getPassword());
         db.update(tbname, values, "phone=?", new String[]{String.valueOf(u.getPhone())});
-        // 参数1：表名；参数2：新值；参数3/4：条件
         db.close();
     }
 

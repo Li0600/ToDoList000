@@ -20,17 +20,17 @@ public class DBManager {
 
     //添加单条数据到数据库
     public void add(Todo t){
-        SQLiteDatabase db = dbHelper.getWritableDatabase();  // 获取可写数据库
-        ContentValues values = new ContentValues();           // 存储插入值
-        values.put("detail", t.getDetail());            // 键为列名，值为数据
-        db.insert(tbname, null, values);  // 插入数据（表名、null列名、值）
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("detail", t.getDetail());
+        db.insert(tbname, null, values);
         db.close();
     }
 
     // 删除表中所有数据
     public void deleteAll() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        db.delete(tbname, null, null);  // 条件为null表示删除所有行
+        db.delete(tbname, null, null);
         db.close();
     }
     // 根据ID删除单条数据
@@ -45,7 +45,6 @@ public class DBManager {
         ContentValues values = new ContentValues();
         values.put("detail", t.getDetail());
         db.update(tbname, values, "ID=?", new String[]{String.valueOf(t.getId())});
-        // 参数1：表名；参数2：新值；参数3/4：条件
         db.close();
     }
     // 查询所有数据并返回List
@@ -55,7 +54,7 @@ public class DBManager {
         Cursor cursor = db.query(tbname, null, null, null, null, null, null
         );
         if (cursor != null) {
-            while (cursor.moveToNext()) {  // 遍历游标
+            while (cursor.moveToNext()) {
                 Todo t = new Todo();
                 int idIndex = cursor.getColumnIndex("id");
                 if (idIndex != -1) {
@@ -65,9 +64,9 @@ public class DBManager {
                 if (detailIndex != -1) {
                     t.setDetail(cursor.getString(detailIndex));
                 }
-                list.add(t);  // 添加到列表
+                list.add(t);
             }
-            cursor.close();  // 关闭游标
+            cursor.close();
         }
         db.close();
         return list;

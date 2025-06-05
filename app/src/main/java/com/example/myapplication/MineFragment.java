@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,10 +24,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public class MineFragment extends Fragment implements View.OnClickListener{
-   Button delete,reset_password,reset_username;
+   Button delete,reset_password,reset_username,out;
    ListView listView;
    private User nowuser;
    private static final String TAG="MineFragment";
@@ -37,17 +40,17 @@ public class MineFragment extends Fragment implements View.OnClickListener{
         delete = view.findViewById(R.id.delete);
         reset_password = view.findViewById(R.id.change_password);
         reset_username = view.findViewById(R.id.change_username);
+        out=view.findViewById(R.id.out);
         delete.setOnClickListener(this);
         reset_username.setOnClickListener(this);
         reset_password.setOnClickListener(this);
+        out.setOnClickListener(this);
         listView = view.findViewById(R.id.listview1);
 
-        // 获取当前登录用户信息
         if (getActivity() instanceof MainActivity) {
             nowuser = ((MainActivity) getActivity()).getNowuser();
         }
 
-        // 如果获取到用户信息，显示在ListView中
         if (nowuser != null) {
             List<String> list = new ArrayList<>();
             list.add("电话号码: " + nowuser.getPhone());
@@ -69,11 +72,9 @@ public class MineFragment extends Fragment implements View.OnClickListener{
                 dbManager.delete(nowuser.getPhone());
                 //删除数据
                 dbManager1.deleteAll();
+                logout();
                 Toast.makeText(getActivity(), "账号已删除", Toast.LENGTH_SHORT).show();
-                // 跳转到登录页面
-                Intent intent=new Intent(getActivity(), enterActivity.class);
-                startActivity(intent);
-                getActivity().finish();
+//
 
             }
         }
@@ -89,6 +90,11 @@ public class MineFragment extends Fragment implements View.OnClickListener{
             intent.putExtra("phone",nowuser.getPhone());
             intent.putExtra("password",nowuser.getPassword());
             startActivityForResult(intent,2);
+
+        }
+        else if(v.getId()==R.id.out){
+            logout();
+            Toast.makeText(getActivity(), "退出登录成功", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -122,5 +128,25 @@ public class MineFragment extends Fragment implements View.OnClickListener{
             listView.setAdapter(adapter4);
             Log.i(TAG, "onActivityResult: 从ResetPasswordActivity返回，刷新数据");
         }
+    }
+    // 退出登录
+    private void logout() {
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(
+                "UserPrefs", Activity.MODE_PRIVATE
+        );
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("isLoggedIn", false); // 清除登录标记
+        editor.remove("phone");        // 清除用户信息
+        editor.remove("username");
+        editor.remove("password");
+        editor.apply();
+
+        Intent intent = new Intent(getActivity(), enterActivity.class);
+        startActivity(intent);
+        if (getActivity() != null) {
+            getActivity().finish(); // 关闭 MainActivity，避免返回
+        }
+
     }
 }

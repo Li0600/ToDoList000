@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // 获取从登录页面传递过来的用户信息
+
         Intent intent=getIntent();
         if (intent != null) {
             String phone=intent.getStringExtra("phone");
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView=findViewById(R.id.bottomNavigationView);
         selcetedFragment(0);
-        //点击切换事件
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.hide(mineFragment);
         }
     }
-    // 获取当前登录用户
+
     public User getNowuser() {
         return nowuser;
     }

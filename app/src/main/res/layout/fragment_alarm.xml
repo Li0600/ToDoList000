@@ -12,7 +12,7 @@
         android:background="@color/blue"
         android:gravity="center"
         android:text="@string/alarm_title"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:layout_marginBottom="100dp"/>
 
     <EditText

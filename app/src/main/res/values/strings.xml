@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">ToDoList</string>
 
 
     <string name="main">首页</string>
@@ -24,12 +24,13 @@
 
 
     <string name="alarm_title">计时器</string>
-    <string name="alarm">输入计时时间（分钟）</string>
+    <string name="alarm">输入计时时间（秒）</string>
     <string name="begin">开始计时</string>
     <string name="end">停止计时</string>
 
     <string name="setting">设置</string>
     <string name="delete">注销账号</string>
+    <string name="out">退出登陆</string>
     <string name="phone1">电话号码：</string>
     <string name="user1">用户名：</string>
     <string name="password1">密码：</string>
