@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+=======
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+>>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
 
     <application
         android:allowBackup="true"
@@ -15,6 +21,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".ResetUsernameActivity2"
             android:exported="true">
             <intent-filter>
@@ -25,6 +32,9 @@
         </activity>
         <activity
             android:name=".ResetPasswordActivity"
+=======
+            android:name=".ClockActivity"
+>>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

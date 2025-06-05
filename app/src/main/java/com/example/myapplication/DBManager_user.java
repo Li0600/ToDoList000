@@ -38,6 +38,7 @@ public class DBManager_user {
         db.delete(tbname, "phone=?", new String[]{String.valueOf(phone)});
         db.close();
     }
+<<<<<<< HEAD
     //更新单条数据
     public void update(User u) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -50,6 +51,41 @@ public class DBManager_user {
         db.close();
     }
 
+=======
+//    //更新单条数据
+//    public void update(User u) {
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//        ContentValues values = new ContentValues();
+//        values.put("phone",u.getPhone());
+//        values.put("username", u.getUsername());
+//        values.put("password",u.getPassword());
+//        db.update(tbname, values, "phone=?", new String[]{String.valueOf(u.getPhone())});
+//        // 参数1：表名；参数2：新值；参数3/4：条件
+//        db.close();
+//    }
+        // 根据username查询单条数据
+//    public  User findById(int id) {
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//        Cursor cursor = db.query(tbname, null, "id=?", new String[]{String.valueOf(id)}, null, null, null
+//        );
+//        User u= null;
+//        if (cursor != null && cursor.moveToFirst()) {  // 至少有一条结果
+//            u = new User();
+//            u.setId(cursor.getInt(0));
+//            u.setPhone(cursor.getString(1));          // 第一列（ID）
+//            u.setUsername(cursor.getString(2));   // 第二列（CURNAME）
+//            u.setPassword(cursor.getString(3));   // 第二列（CURNAME）
+//            cursor.close();
+//            Log.i(TAG,  " Found user with phone: " + u.getPhone()+"with username: " + u.getUsername() +"with password"+u.getPassword());
+//        }
+//        else {
+//            Log.i(TAG, "User not found: " + id);
+//        }
+//
+//        db.close();
+//        return u;
+//    }
+>>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
     // 根据手机号查询用户
     public User findByPhone(String phone) {
         SQLiteDatabase db=dbHelper.getReadableDatabase();

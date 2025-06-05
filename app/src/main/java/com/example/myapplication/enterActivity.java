@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+<<<<<<< HEAD
+=======
+import android.view.accessibility.AccessibilityManager;
+>>>>>>> 88101029d059b0dc075f7947d1cdef9bb4092e6c
 import android.widget.EditText;
 import android.widget.Toast;
 
